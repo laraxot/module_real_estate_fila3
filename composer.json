@@ -1,0 +1,45 @@
+{
+    "name": "laraxot/module_realestate_fila3",
+    "description": "",
+    "homepage": "https://github.com/laraxot/module_realestate_fila3.git",
+    "license": "MIT",
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com"
+    }],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\RealEstate\\": "",
+            "Modules\\RealEstate\\App\\": "app/",
+            "Modules\\RealEstate\\Database\\Factories\\": "database/factories/",
+            "Modules\\RealEstate\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\RealEstate\\Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+        {
+            "type": "path",
+            "url": "../Tenant"
+        },
+        {
+            "type": "path",
+            "url": "../UI"
+        }
+    ]
+}
