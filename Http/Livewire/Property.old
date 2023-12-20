@@ -1,0 +1,44 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\RealEstate\Http\Livewire;
+
+use Illuminate\Contracts\View\View;
+use Livewire\Component;
+use Modules\Xot\Actions\GetViewAction;
+
+/**
+ * Class Property.
+ */
+class Property extends Component
+{
+    public string $tpl = 'property';
+
+    public Property $property;
+
+    /**
+     * Undocumented function.
+     */
+    public function mount(Property $property): void
+    {
+        $this->property = $property;
+    }
+
+    /**
+     * Undocumented function.
+     */
+    public function render(): View
+    {
+        /**
+         * @phpstan-var view-string
+         */
+        $view = app(GetViewAction::class)->execute($this->tpl);
+        dddx($view);
+        $view_params = [
+            'view' => $view,
+        ];
+
+        return view($view, $view_params);
+    }
+}

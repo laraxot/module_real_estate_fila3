@@ -1,0 +1,12 @@
+<?php
+
+namespace Modules\RealEstate\Filament\Resources\ImageResource\Pages;
+
+use Modules\RealEstate\Filament\Resources\ImageResource;
+use Filament\Actions;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateImage extends CreateRecord
+{
+    protected static string $resource = ImageResource::class;
+}

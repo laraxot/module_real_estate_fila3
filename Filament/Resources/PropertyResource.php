@@ -1,0 +1,98 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\RealEstate\Filament\Resources;
+
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Columns\BooleanColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Modules\RealEstate\Filament\Resources\PropertyResource\Pages;
+use Modules\RealEstate\Models\Agent;
+use Modules\RealEstate\Models\Property;
+
+class PropertyResource extends Resource
+{
+    protected static ?string $model = Property::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                Select::make('agent_id')
+                    ->label('Agent')
+                    ->options(Agent::all()->pluck('full_name', 'id'))
+                    ->searchable(),
+                TextInput::make('price')->numeric()->prefix('€'),
+                TextInput::make('address'),
+                TextInput::make('country'), // per ora lascio questo anche se non va bene
+                TextInput::make('beds')->numeric(),
+                Toggle::make('baths'),
+                Textarea::make('description'),
+                Toggle::make('is_popular'),
+                Toggle::make('is_featured'),
+                // non manca un immagine della proprietà?
+                SpatieMediaLibraryFileUpload::make('images')
+                    // ->image()
+                    // ->maxSize(5000)
+                    ->multiple()
+                    ->enableReordering()
+                    ->enableOpen()
+                    ->enableDownload()
+                    ->columnSpanFull()
+                    // ->collection('avatars')
+                    // ->conversion('thumbnail')
+                    ->disk('uploads')
+                    ->directory('photos'),
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('address'),
+                TextColumn::make('price')->money('EUR'),
+                TextColumn::make('country'),
+
+                BooleanColumn::make('is_popular'),
+            ])
+            ->filters([
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ])
+            ->emptyStateActions([
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListProperties::route('/'),
+            'create' => Pages\CreateProperty::route('/create'),
+            'edit' => Pages\EditProperty::route('/{record}/edit'),
+        ];
+    }
+}
