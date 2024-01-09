@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-        @foreach($properties as $property)
+        @foreach ($properties as $property)
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <x-re.property :property="$property" />
             </div>
