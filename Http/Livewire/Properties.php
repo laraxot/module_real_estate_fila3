@@ -5,7 +5,7 @@ namespace Modules\RealEstate\Http\Livewire;
 use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Modules\Cms\Actions\GetViewAction;
+use Modules\Xot\Actions\GetViewAction;
 use Modules\Cms\Filament\Front\Pages\Welcome;
 use Modules\RealEstate\Models\Property;
 
