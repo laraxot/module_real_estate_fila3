@@ -26,7 +26,6 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @property-read int|null $media_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, Media> $medias
  * @property-read int|null $medias_count
- *
  * @method static \Modules\RealEstate\Database\Factories\TestimonialFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Testimonial newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Testimonial newQuery()
@@ -41,7 +40,6 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Illuminate\Database\Eloquent\Builder|Testimonial whereTestimonial($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Testimonial whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Testimonial whereUpdatedBy($value)
- *
  * @mixin \Eloquent
  */
 class Testimonial extends BaseModel implements HasMedia
