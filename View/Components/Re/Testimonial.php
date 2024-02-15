@@ -6,8 +6,8 @@ namespace Modules\RealEstate\View\Components\Re;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Modules\Xot\Actions\GetViewAction;
 use Modules\RealEstate\Models\Testimonial as Celebrity;
+use Modules\Xot\Actions\GetViewAction;
 
 class Testimonial extends Component
 {

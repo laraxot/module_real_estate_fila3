@@ -29,6 +29,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @property-read int|null $media_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, Media> $medias
  * @property-read int|null $medias_count
+ *
  * @method static \Modules\RealEstate\Database\Factories\AgentFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Agent newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Agent newQuery()
@@ -46,6 +47,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Illuminate\Database\Eloquent\Builder|Agent whereTwitter($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Agent whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Agent whereUpdatedBy($value)
+ *
  * @mixin \Eloquent
  */
 class Agent extends BaseModel implements HasMedia

@@ -5,9 +5,9 @@ namespace Modules\RealEstate\Http\Livewire;
 use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Modules\Xot\Actions\GetViewAction;
 use Modules\Cms\Filament\Front\Pages\Welcome;
 use Modules\RealEstate\Models\Property;
+use Modules\Xot\Actions\GetViewAction;
 
 class Properties extends Component
 {

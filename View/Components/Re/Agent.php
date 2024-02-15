@@ -6,8 +6,8 @@ namespace Modules\RealEstate\View\Components\Re;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Modules\Xot\Actions\GetViewAction;
 use Modules\RealEstate\Models\Agent as Ag;
+use Modules\Xot\Actions\GetViewAction;
 
 class Agent extends Component
 {
