@@ -24,40 +24,40 @@ use Spatie\Permission\Traits\HasRoles;
 /**
  * Modules\RealEstate\Models\Profile.
  *
- * @property-read Collection<int, \Modules\Quaeris\Models\Customer> $customers
- * @property-read int|null $customers_count
- * @property-read string|null $full_name
- * @property-read Collection<int, Permission> $permissions
- * @property-read int|null $permissions_count
- * @property-read Collection<int, Role> $roles
- * @property-read int|null $roles_count
- * @property-read User|null $user
+ * @property Collection<int, \Modules\Quaeris\Models\Customer> $customers
+ * @property int|null                                          $customers_count
+ * @property string|null                                       $full_name
+ * @property Collection<int, Permission>                       $permissions
+ * @property int|null                                          $permissions_count
+ * @property Collection<int, Role>                             $roles
+ * @property int|null                                          $roles_count
+ * @property User|null                                         $user
  *
- * @method static CachedBuilder|Profile all($columns = [])
- * @method static CachedBuilder|Profile avg($column)
- * @method static CachedBuilder|Profile cache(array $tags = [])
- * @method static CachedBuilder|Profile cachedValue(array $arguments, string $cacheKey)
- * @method static CachedBuilder|Profile count($columns = '*')
+ * @method static CachedBuilder|Profile                                  all($columns = [])
+ * @method static CachedBuilder|Profile                                  avg($column)
+ * @method static CachedBuilder|Profile                                  cache(array $tags = [])
+ * @method static CachedBuilder|Profile                                  cachedValue(array $arguments, string $cacheKey)
+ * @method static CachedBuilder|Profile                                  count($columns = '*')
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|BaseModel disableCache()
- * @method static CachedBuilder|Profile disableModelCaching()
- * @method static CachedBuilder|Profile exists()
- * @method static CachedBuilder|Profile flushCache(array $tags = [])
- * @method static CachedBuilder|Profile getModelCacheCooldown(\Illuminate\Database\Eloquent\Model $instance)
- * @method static CachedBuilder|Profile inRandomOrder($seed = '')
- * @method static CachedBuilder|Profile insert(array $values)
- * @method static CachedBuilder|Profile isCachable()
- * @method static CachedBuilder|Profile max($column)
- * @method static CachedBuilder|Profile min($column)
- * @method static CachedBuilder|Profile newModelQuery()
- * @method static CachedBuilder|Profile newQuery()
- * @method static CachedBuilder|Profile permission($permissions)
- * @method static CachedBuilder|Profile query()
- * @method static CachedBuilder|Profile role($roles, $guard = null)
- * @method static CachedBuilder|Profile sum($column)
- * @method static CachedBuilder|Profile truncate()
+ * @method static CachedBuilder|Profile                                  disableModelCaching()
+ * @method static CachedBuilder|Profile                                  exists()
+ * @method static CachedBuilder|Profile                                  flushCache(array $tags = [])
+ * @method static CachedBuilder|Profile                                  getModelCacheCooldown(\Illuminate\Database\Eloquent\Model $instance)
+ * @method static CachedBuilder|Profile                                  inRandomOrder($seed = '')
+ * @method static CachedBuilder|Profile                                  insert(array $values)
+ * @method static CachedBuilder|Profile                                  isCachable()
+ * @method static CachedBuilder|Profile                                  max($column)
+ * @method static CachedBuilder|Profile                                  min($column)
+ * @method static CachedBuilder|Profile                                  newModelQuery()
+ * @method static CachedBuilder|Profile                                  newQuery()
+ * @method static CachedBuilder|Profile                                  permission($permissions)
+ * @method static CachedBuilder|Profile                                  query()
+ * @method static CachedBuilder|Profile                                  role($roles, $guard = null)
+ * @method static CachedBuilder|Profile                                  sum($column)
+ * @method static CachedBuilder|Profile                                  truncate()
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|BaseModel withCacheCooldownSeconds(?int $seconds = null)
  *
- * @property int $id
+ * @property int         $id
  * @property string|null $first_name
  * @property string|null $last_name
  * @property Carbon|null $created_at
@@ -88,11 +88,8 @@ class Profile extends BaseModel implements ModelProfileContract
 
     // protected $connection = 'quaeris';
 
-    /**
-     * @var string[]
-     */
+    /** @var array<int, string> */
     protected $fillable = ['id', 'user_id', 'phone', 'email', 'bio'];
 
     // ------- RELATIONSHIP ----------
-
 }// end model
