@@ -39,6 +39,7 @@ abstract class BaseModel extends Model
 
     /** @var bool */
     public $timestamps = true;
+
     /** @var int */
     protected $perPage = 30;
 
